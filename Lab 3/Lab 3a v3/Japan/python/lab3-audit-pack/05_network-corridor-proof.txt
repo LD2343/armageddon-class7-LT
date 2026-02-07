@@ -1,0 +1,38 @@
+05 — NETWORK CORRIDOR PROOF (TGW)
+================================
+
+Generated (UTC): 20260206T023115Z
+Regions: Tokyo (ap-northeast-1) ↔ São Paulo (sa-east-1)
+
+REGION: ap-northeast-1
+----------------------------------------------------------------------
+Transit Gateway ID: tgw-018851830bf43796f
+Attachments:
+  - peering | tgw-0881cc6f389615ee4 | State: available
+  - vpc | vpc-08f9e074017bb59d3 | State: available
+TGW Route Tables (remote CIDRs):
+  - RTB tgw-rtb-04a8f829a2a7defb0 routes 10.81.0.0/16 via attachment [{'ResourceId': 'vpc-08f9e074017bb59d3', 'TransitGatewayAttachmentId': 'tgw-attach-0279ba51305948eed', 'ResourceType': 'vpc'}]
+VPC Route Tables (remote CIDRs → TGW):
+  - VPC vpc-08f9e074017bb59d3 RT rtb-0054e09c02f04a401 routes 10.81.0.0/16 to TGW None
+  - VPC vpc-08f9e074017bb59d3 RT rtb-0a9d0be691361a2f5 routes 10.81.0.0/16 to TGW None
+  - VPC vpc-08f9e074017bb59d3 RT rtb-0f3ed9f9f84b075e8 routes 10.81.0.0/16 to TGW None
+
+REGION: sa-east-1
+----------------------------------------------------------------------
+Transit Gateway ID: tgw-0881cc6f389615ee4
+Attachments:
+  - peering | tgw-018851830bf43796f | State: available
+  - vpc | vpc-07fba95446a12d0c0 | State: available
+TGW Route Tables (remote CIDRs):
+  - RTB tgw-rtb-0e6421d8e48db179a routes 10.55.0.0/16 via attachment [{'ResourceId': 'vpc-07fba95446a12d0c0', 'TransitGatewayAttachmentId': 'tgw-attach-01c07359f2c3b8195', 'ResourceType': 'vpc'}]
+VPC Route Tables (remote CIDRs → TGW):
+  - VPC vpc-07fba95446a12d0c0 RT rtb-0b9b0bb7b2ad8061f routes 10.55.0.0/16 to TGW None
+  - VPC vpc-07fba95446a12d0c0 RT rtb-0663328bb8b0daf5f routes 10.55.0.0/16 to TGW None
+  - VPC vpc-07fba95446a12d0c0 RT rtb-0d0d097fb34c8d1e6 routes 10.55.0.0/16 to TGW None
+
+COMPLIANCE SUMMARY
+------------------
+- Transit Gateway attachments exist in both regions
+- TGW peering enables controlled cross-region routing
+- Only explicitly defined CIDRs are permitted
+- This forms a restricted, auditable network corridor
